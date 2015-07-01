@@ -1,0 +1,1 @@
+objcopy -O binary --only-section=.rodata Tibia rodata
