@@ -1,1 +1,2 @@
 objcopy -O binary --only-section=.rodata Tibia rodata
+./rtti_extractor rodata <0xbaseaddr> <0xno_inheritance_rtti> <0xsi_inheritance_rtti>

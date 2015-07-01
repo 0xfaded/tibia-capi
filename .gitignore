@@ -1,2 +1,5 @@
 *.swp
 tibia-hook.so
+rtti_extractor/rtti_extractor
+rtti_extractor/rodata
+
