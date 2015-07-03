@@ -107,8 +107,6 @@
 #include <classes/ButtonWindow.h>
 #include <classes/CombatButtonWindow.h>
 #include <classes/ContainerWindow.h>
-#include <classes/ContainerWindow14TWindowContentE.h>
-#include <classes/ContainerWindow13TWindowFooterE.h>
 #include <classes/Capacity.h>
 #include <classes/Soulpoints.h>
 #include <classes/BlessingIcon.h>
