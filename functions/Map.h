@@ -18,6 +18,11 @@ int32_t (*map_local_z)(void) = (void *)0x08185a70;
 //      After the call, they will contain the global (x, y, z).
 int32_t (*map_local_to_global)(int32_t *x, int32_t *y, int32_t *z) = (void *)0x8185a90;
 
+// map_global_to_local converts (x, y, z) relative to (0, 0) of the game map into global coordinates.
+// To find:
+//   1. Next function below map_local_to_global.
+int32_t (*map_global_to_local)(int32_t *x, int32_t *y, int32_t *z) = (void *)0x8185b00;
+
 // map_set_target sets the target location for the client to walk to. Call with game_map=1 for
 // game map, 0 for mini map behaviour.
 // To find:
@@ -31,3 +36,19 @@ int32_t (*map_set_target)(int32_t x, int32_t y, int32_t z, int32_t game_map, int
 // To find:
 //   1. Look for the void function call call at the end of MapWindow::button_release.
 int32_t (*map_go_to_target)(void) = (void *)0x080837e0;
+
+typedef struct MapTile MapTile;
+struct MapTile {
+        uint32_t unknown1;
+        uint32_t count;
+        uint32_t obj_id;
+        uint32_t unknown3;
+        uint32_t unknown4;
+        uint32_t unknown5;
+        uint32_t unknown6;
+        uint32_t unknown7;
+};
+MapTile (*map_get_tile)(int32_t x, int32_t y, int32_t z, int32_t stack) = (void *)0x081a06d0;
+
+// flag = 1
+int32_t (*map_can_move)(int32_t x, int32_t y, int32_t z, int32_t flag) = (void *)0x081a3240;

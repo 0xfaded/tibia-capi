@@ -8,19 +8,20 @@ typedef struct BattleList BattleList;
 typedef struct BattleListEntry BattleListEntry;
 
 struct BattleListEntry {
+        int32_t tibia_id;
         int32_t x;
         int32_t y;
-        int32_t monster_id;
 };
 
+#pragma pack(1)
 struct BattleList {
-        int32_t num_monsters;
-        BattleListEntry monsters[92];
+        int32_t monsters_length;;
+        BattleListEntry monsters[0x200];
 };
 
 struct MapWindow {
         GUIComposite composite;
         int32_t unknown1;
         BattleList battle_list;
-        int32_t unknown[0];
+        // battle_list is assumed to continue indefinately
 };
